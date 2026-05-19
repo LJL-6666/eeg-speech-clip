@@ -35,7 +35,26 @@ export GITHUB_TOKEN='ghp_你的token'   # 不要写入文件、不要提交 git
 bash scripts/push_to_github.sh
 ```
 
-脚本会自动：创建私人仓库 `LJL-6666/eeg-speech-clip`（若不存在）→ push `main` → 将 remote 改回不含 token 的 URL。
+脚本会自动：创建私人仓库 `LJL-6666/eeg-speech-clip`（若不存在）→ push `main`（失败会自动重试 5 次）→ 将 remote 改回不含 token 的 URL。
+
+### 若出现 `GnuTLS recv error (-110)` 或 TLS 中断
+
+说明服务器到 `github.com` 网络不稳定，可：
+
+1. 多执行几次 `bash scripts/push_to_github.sh`
+2. 或在本机（能稳定访问 GitHub 的电脑）克隆后 push
+3. 或打包代码拷到本机 push：
+
+```bash
+cd "/data/liujialing/TY/建模/EEG与语音联动"
+tar czf /tmp/eeg-speech-clip-code.tar.gz \
+  --exclude='.git' 跨模态对比学习/code 跨模态对比学习/docs \
+  跨模态对比学习/README.md 跨模态对比学习/.gitignore \
+  跨模态对比学习/data/README.md 跨模态对比学习/data/corrected_subjects.txt
+# 下载 /tmp/eeg-speech-clip-code.tar.gz 到本机后，在已 clone 的仓库里解压并 commit/push
+```
+
+**安全**：Token 不要贴在聊天或终端历史里；若已泄露，请到 GitHub → Settings → Developer settings → 撤销该 token 并重新生成。
 
 ## 克隆到新机器后恢复数据
 

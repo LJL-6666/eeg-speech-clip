@@ -49,7 +49,22 @@ else
   git remote add origin "https://github.com/${GITHUB_USER}/${REPO_NAME}.git"
 fi
 
-git push "$REPO_URL" main:main
+# 缓解服务器到 GitHub HTTPS 不稳定（GnuTLS -110 等）
+git config --global http.version HTTP/1.1 2>/dev/null || true
+git config --global http.postBuffer 524288000 2>/dev/null || true
+
+PUSH_OK=0
+for attempt in 1 2 3 4 5; do
+  echo "push 尝试 $attempt/5 ..."
+  if git push "$REPO_URL" main:main; then
+    PUSH_OK=1
+    break
+  fi
+  echo "push 失败，15 秒后重试..."
+  sleep 15
+done
+[ "$PUSH_OK" -eq 1 ] || { echo "[ERROR] push 多次失败，见下方「网络备选方案」"; exit 1; }
+
 git branch --set-upstream-to=origin/main main 2>/dev/null || true
 
 # 恢复 remote 为不含 token 的 URL
