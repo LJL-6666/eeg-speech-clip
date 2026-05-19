@@ -1,0 +1,29 @@
+# ===== 大体积数据（勿提交 GitHub；在服务器用软链接或见 docs/数据说明.md）=====
+data/eeg_original
+data/eeg_corrected
+data/stage1_audio_whisper_embeddings_v2
+data/whisper_embeddings
+data/raw_bdf_begin_timestamp_correction
+cache/
+results/
+logs/
+models/
+experiments/
+
+# ===== Python / 运行临时 =====
+__pycache__/
+*.py[cod]
+*.npz
+*.pkl
+*.pt
+*.pth
+*.ckpt
+.env
+.venv/
+
+# ===== IDE / 系统 =====
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
