@@ -1,0 +1,10 @@
+{
+  "n_windows": 46634,
+  "n_subjects": 120,
+  "n_materials": 52,
+  "n_pair_keys": 728,
+  "n_source_keys": 56,
+  "speech_dim": 512,
+  "min_t_start": 0.0,
+  "max_t_end": 30.0
+}

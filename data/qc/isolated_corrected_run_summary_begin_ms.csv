@@ -1,0 +1,15 @@
+folder,subject,task,output_name,n_valid_pairs,n_video_order,status,output_path
+112/交流,112,交流,communication,28,28,processed,/data/liujialing/TY/建模/EEG与语音联动/EEG/safe_trials/raw_bdf_begin_timestamp_ms_20260517/isolated_corrected_output_begin_ms/communication/112.pkl
+122/交流,122,交流,communication,28,28,processed,/data/liujialing/TY/建模/EEG与语音联动/EEG/safe_trials/raw_bdf_begin_timestamp_ms_20260517/isolated_corrected_output_begin_ms/communication/122.pkl
+135/交流,135,交流,communication,28,28,processed,/data/liujialing/TY/建模/EEG与语音联动/EEG/safe_trials/raw_bdf_begin_timestamp_ms_20260517/isolated_corrected_output_begin_ms/communication/135.pkl
+24,24,communication,communication,28,28,processed,/data/liujialing/TY/建模/EEG与语音联动/EEG/safe_trials/raw_bdf_begin_timestamp_ms_20260517/isolated_corrected_output_begin_ms/communication/024.pkl
+26,26,communication,communication,28,28,processed,/data/liujialing/TY/建模/EEG与语音联动/EEG/safe_trials/raw_bdf_begin_timestamp_ms_20260517/isolated_corrected_output_begin_ms/communication/026.pkl
+33,33,communication,communication,28,28,processed,/data/liujialing/TY/建模/EEG与语音联动/EEG/safe_trials/raw_bdf_begin_timestamp_ms_20260517/isolated_corrected_output_begin_ms/communication/033.pkl
+35,35,communication,communication,28,28,processed,/data/liujialing/TY/建模/EEG与语音联动/EEG/safe_trials/raw_bdf_begin_timestamp_ms_20260517/isolated_corrected_output_begin_ms/communication/035.pkl
+36,36,communication,communication,28,28,processed,/data/liujialing/TY/建模/EEG与语音联动/EEG/safe_trials/raw_bdf_begin_timestamp_ms_20260517/isolated_corrected_output_begin_ms/communication/036.pkl
+39,39,communication,communication,28,28,processed,/data/liujialing/TY/建模/EEG与语音联动/EEG/safe_trials/raw_bdf_begin_timestamp_ms_20260517/isolated_corrected_output_begin_ms/communication/039.pkl
+42,42,communication,communication,28,28,processed,/data/liujialing/TY/建模/EEG与语音联动/EEG/safe_trials/raw_bdf_begin_timestamp_ms_20260517/isolated_corrected_output_begin_ms/communication/042.pkl
+51,51,communication,communication,28,28,processed,/data/liujialing/TY/建模/EEG与语音联动/EEG/safe_trials/raw_bdf_begin_timestamp_ms_20260517/isolated_corrected_output_begin_ms/communication/051.pkl
+84/电影,84,电影,movie,28,28,processed,/data/liujialing/TY/建模/EEG与语音联动/EEG/safe_trials/raw_bdf_begin_timestamp_ms_20260517/isolated_corrected_output_begin_ms/movie/084.pkl
+95/电影,95,电影,movie,28,28,processed,/data/liujialing/TY/建模/EEG与语音联动/EEG/safe_trials/raw_bdf_begin_timestamp_ms_20260517/isolated_corrected_output_begin_ms/movie/095.pkl
+96/交流,96,交流,communication,28,28,processed,/data/liujialing/TY/建模/EEG与语音联动/EEG/safe_trials/raw_bdf_begin_timestamp_ms_20260517/isolated_corrected_output_begin_ms/communication/096.pkl

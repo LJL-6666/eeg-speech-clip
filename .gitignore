@@ -1,29 +1,27 @@
-# ===== 大体积数据（勿提交 GitHub；在服务器用软链接或见 docs/数据说明.md）=====
-data/eeg_original
-data/eeg_corrected
-data/stage1_audio_whisper_embeddings_v2
-data/whisper_embeddings
-data/raw_bdf_begin_timestamp_correction
-/cache
-/results
-/logs
-/models
-/experiments
+# ===== 超大体积：无法放入 GitHub（单 pkl ~300MB），用 scripts/fetch_eeg_data.sh 获取 =====
+/data/eeg_original/
+/data/eeg_corrected/
+*.pkl
 
-# ===== Python / 运行临时 =====
+# ===== 原始 BDF 修正试验全文（太大）；仅提交 QC 摘要 =====
+/data/raw_bdf_begin_timestamp_correction/
+
+# ===== 训练产出（可本地重跑）；已发布摘要见 results_published/ =====
+/results/
+/logs/
+
+# ===== 预训练权重：clone 后由 setup 从 HuggingFace 拉取 =====
+/models/
+
+# ===== Python / 临时 =====
 __pycache__/
 *.py[cod]
-*.npz
-*.pkl
-*.pt
-*.pth
-*.ckpt
 .env
 .venv/
-
-# ===== IDE / 系统 =====
 .DS_Store
-Thumbs.db
 .idea/
 .vscode/
-*.swp
+
+# ===== 本地打包中间文件 =====
+/data/release_staging/
+*.bundle

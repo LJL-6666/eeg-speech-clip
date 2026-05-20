@@ -10,25 +10,26 @@
 
 ```
 跨模态对比学习/
-├── README.md                 # 本文件
-├── code/                     # 训练与合并脚本
-│   ├── stage3_speech_eeg_clip.py
-│   ├── stage3_merge_folds.py
-│   ├── run_stage3_safe.sh              # 原版数据：wav2vec2 + hubert 双进程
-│   └── run_stage3_corrected_3gpu.sh    # 修正数据：三基座各 1 卡
+├── README.md
+├── environment.yml           # Conda 环境参考
+├── code/                     # 训练脚本（已纳入 Git）
+├── experiments/              # narrative_identity 等（已纳入 Git）
 ├── data/
-│   ├── eeg_original/         # → Preprocessing/output/communication（120 pkl）
-│   ├── eeg_corrected/        # → communication_corrected_20260519（12 人替换）
+│   ├── stage1_audio_whisper_embeddings_v2/  # 1.1GB Whisper 特征（已纳入 Git）
 │   ├── corrected_subjects.txt
-│   ├── stage1_audio_whisper_embeddings_v2/  # Whisper 缓存
-│   └── raw_bdf_begin_timestamp_correction/  # 修正 QC 与 isolated 输出
-├── experiments/              # → EEG/experiments（narrative_identity 等）
-├── cache/                    # → EEG/cache/stage3_speech_eeg_clip
-├── results/                  # → EEG/results/stage3_speech_eeg_clip
-├── logs/                     # Stage3 运行日志（软链接）
-├── models/                   # 本地 Whisper 权重（如有）
-└── docs/                     # 设计说明、数据说明
+│   ├── manifests/、qc/
+│   ├── eeg_original/         # 35GB，不纳入 Git；clone 后 fetch
+│   └── eeg_corrected/        # 35GB，不纳入 Git；clone 后 fetch
+├── cache/                    # Wav2Vec2/HuBERT 语音缓存 26MB（已纳入 Git）
+├── results_published/        # Whisper 全量结果摘要（已纳入 Git）
+├── scripts/
+│   ├── setup_after_clone.sh
+│   ├── fetch_eeg_data.sh
+│   └── pack_eeg_for_release.sh
+└── docs/
 ```
+
+**任意机器 clone 后**：自带代码 + Whisper 特征 + 语音 cache，装好 conda 并 `fetch` 脑电 pkl 即可跑。详见 [docs/clone后运行.md](docs/clone后运行.md)。
 
 ## 三语音基座
 
@@ -74,9 +75,8 @@ conda run -n eeg_analysis python code/stage3_speech_eeg_clip.py \
 
 ## 与 EEG 目录的关系
 
-- **代码**：本目录为 Stage 3 的规范副本；`EEG/code` 中同名文件仍供**当前后台任务**使用，勿在任务运行中删除。
-- **cache / results / logs**：通过软链接与 `EEG/` 共享，避免重复占用磁盘。
-- **Stage 1/2（TRF）**：仍在 `EEG/code`，不在此目录。
+- 本仓库为 **可移植发布版**；服务器上 `EEG/` 仍可能有进行中的训练，脑电 pkl 在本机通过 `data/eeg_*` 软链接指向 `Preprocessing/output/`。
+- **Stage 1/2（TRF）**：仍在 `EEG/code`，不在此仓库。
 
 ## 相关文档
 
