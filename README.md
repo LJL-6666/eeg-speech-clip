@@ -1,6 +1,6 @@
 # 跨模态对比学习（Speech–EEG CLIP）
 
-本目录集中存放 **Stage 3：CLIP 风格语音–脑电跨模态对比学习** 的代码、数据入口、缓存、结果与日志。与 `EEG/code` 中 TRF/encoding（Stage 1/2）分离，便于按黎明建议独立维护工作流。
+本目录集中存放 **Stage 3：CLIP 风格语音–脑电跨模态对比学习** 的代码、数据入口、缓存、结果与日志。与 `EEG/code` 中 TRF/encoding（Stage 1/2）分离，便于独立维护工作流。
 
 ## 核心问题
 
